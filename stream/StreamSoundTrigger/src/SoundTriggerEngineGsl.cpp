@@ -2302,8 +2302,8 @@ bool SoundTriggerEngineGsl::UpdateGlobalDetectionStatus(bool is_active) {
     std::unique_lock<std::mutex> lck(global_det_mutex_);
 
     if (is_active) {
-        for (const auto& [key, value] : eng_det_stat_map_) {
-            if (value && key != this) {
+        for (const auto& entry : eng_det_stat_map_) {
+            if (entry.second && entry.first != this) {
                 PAL_ERR(LOG_TAG,
                     "Failed to update due to other event being handled");
                 return false;
