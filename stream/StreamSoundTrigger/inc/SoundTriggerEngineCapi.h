@@ -37,13 +37,7 @@
 #define SOUNDTRIGGERENGINECAPI_H
 
 #include "capi_v2.h"
-/*
- * Non-QLI builds need capi_v2_extn.h for stage2 UV wrapper IDs/types.
- * QLI-specific capi_v2.h already carries those core definitions.
- */
-#ifndef QLI_SPECIFIC
 #include "capi_v2_extn.h"
-#endif
 #include "PalRingBuffer.h"
 #include "SoundTriggerEngine.h"
 
